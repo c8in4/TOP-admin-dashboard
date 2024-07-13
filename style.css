@@ -18,14 +18,15 @@ body {
   min-height: 100vh;
   display: grid;
   grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
   grid-template-areas:
     "sidebar header"
     "sidebar main";
 }
 
 aside {
-  outline: 1px solid red;
-
+  /* outline: 1px solid red; */
+padding: 1rem;
   background-color: var(--dashboard-bg-clr);
   color: white;
   grid-area: sidebar;
@@ -34,14 +35,19 @@ aside {
 /* add icons to list items */
 
 header {
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 
-  
+  padding: 1rem 2rem;
   grid-area: header;
 }
 
+header .top-row,
+header .bottom-row {
+  display: flex;
+}
+
 main {
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 
   
   grid-area: main;
