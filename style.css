@@ -2,7 +2,7 @@
   --secondary-text-clr: rgb(103, 103, 103);
   --primary-bg-clr: rgb(226, 232, 240);
   --dashboard-bg-clr: rgb(25, 146, 212);
-  --dashboard-text-clr: rgb(255, 255, 255);
+  --dashboard-text-clr: white;
   --accent-clr: rgb(240, 180, 41);
 }
 
@@ -41,12 +41,13 @@ header {
   box-shadow: 5px -2px 5px 5px rgba(120, 120, 120, 0.4);
   grid-area: header;
   z-index: 1;
+  
+  .top-row,
+  .bottom-row {
+    display: flex;
+  }
 }
 
-header .top-row,
-header .bottom-row {
-  display: flex;
-}
 
 main {
   /* outline: 1px solid red; */
@@ -68,22 +69,23 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
+  
+  .card {
+    border-left: 7px solid var(--accent-clr);
+  }
 }
 
 .card {
   background-color: var(--dashboard-text-clr);
   border-radius: 8px;
-  padding: 1em;
+  padding: 1.5em;
+  
+  p {
+    color: var(--secondary-text-clr);
+  }
 }
 
-.project-cards .card {
-  border-left: 7px solid var(--accent-clr);
 
-}
-
-.card p {
-  color: var(--secondary-text-clr);
-}
 
 .aside-column {
   grid-area: aside-column;
@@ -91,4 +93,17 @@ main {
 
 .anouncements {}
 
-.trending {}
+
+.trend {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  + .trend {
+    margin-top: 1.5rem;
+  }
+
+  .trend-name p {
+    margin: 0;
+  }
+}
