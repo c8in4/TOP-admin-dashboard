@@ -31,6 +31,8 @@ aside {
   grid-area: sidebar;
 }
 
+/* add icons to list items */
+
 header {
   outline: 1px solid red;
 
