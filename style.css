@@ -2,7 +2,7 @@
   --secondary-text-clr: rgb(103, 103, 103);
   --primary-bg-clr: rgb(226, 232, 240);
   --dashboard-bg-clr: rgb(25, 146, 212);
-  --dashboard-text-clr: rgb(225, 225, 225);
+  --dashboard-text-clr: rgb(255, 255, 255);
   --accent-clr: rgb(240, 180, 41);
 }
 
@@ -17,16 +17,16 @@ body {
   margin: 0;
   min-height: 100vh;
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 1fr 4fr;
   grid-template-rows: auto 1fr;
   grid-template-areas:
     "sidebar header"
     "sidebar main";
 }
 
-aside {
+.sidebar {
   /* outline: 1px solid red; */
-padding: 1rem;
+  padding: 1rem;
   background-color: var(--dashboard-bg-clr);
   color: white;
   grid-area: sidebar;
@@ -38,7 +38,9 @@ header {
   /* outline: 1px solid red; */
 
   padding: 1rem 2rem;
+  box-shadow: 5px -2px 5px 5px rgba(120, 120, 120, 0.4);
   grid-area: header;
+  z-index: 1;
 }
 
 header .top-row,
@@ -48,7 +50,42 @@ header .bottom-row {
 
 main {
   /* outline: 1px solid red; */
-
-  
+  background-color: var(--primary-bg-clr);
+  padding: 1rem 2rem 2rem 1rem;
   grid-area: main;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas:
+    "your-projects  announcements"
+    "your-projects  trending";
+    gap: 1rem;
+}
+
+.your-projects {
+  grid-area: your-projects;
+}
+
+.project-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: var(--dashboard-text-clr);
+  border-left: 7px solid var(--accent-clr);
+  border-radius: 8px;
+}
+
+.card p {
+  color: var(--secondary-text-clr);
+}
+
+.anouncements {
+  grid-area: announcements;
+}
+
+.trending {
+  grid-area: trending;
 }
