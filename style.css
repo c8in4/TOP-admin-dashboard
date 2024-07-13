@@ -54,12 +54,10 @@ main {
   padding: 1rem 2rem 2rem 1rem;
   grid-area: main;
   display: grid;
-  grid-template-rows: 1fr 1fr;
   grid-template-columns: 3fr 1fr;
   grid-template-areas:
-    "your-projects  announcements"
-    "your-projects  trending";
-    gap: 1rem;
+    "your-projects  aside-column";
+  gap: 1rem;
 }
 
 .your-projects {
@@ -74,18 +72,23 @@ main {
 
 .card {
   background-color: var(--dashboard-text-clr);
-  border-left: 7px solid var(--accent-clr);
   border-radius: 8px;
+  padding: 1em;
+}
+
+.project-cards .card {
+  border-left: 7px solid var(--accent-clr);
+
 }
 
 .card p {
   color: var(--secondary-text-clr);
 }
 
-.anouncements {
-  grid-area: announcements;
+.aside-column {
+  grid-area: aside-column;
 }
 
-.trending {
-  grid-area: trending;
-}
+.anouncements {}
+
+.trending {}
