@@ -31,10 +31,11 @@ body {
   color: white;
   grid-area: sidebar;
 
-  ul {
-    list-style: none;
-    line-height: 1.5;
-  }
+}
+
+.sidebar ul {
+  list-style: none;
+  line-height: 1.5;
 }
 
 header {
@@ -42,39 +43,80 @@ header {
   box-shadow: var(--box-shadow);
   grid-area: header;
   z-index: 1;
+}
 
-  div + div {
-    margin-top: 1rem;
-  }
+header div+div {
+  margin-top: 1rem;
+}
 
-  .top-row,
-  .bottom-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1rem;
-  }
+header .top-row,
+header .bottom-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0 1rem;
+}
 
-  .user {
-    flex: 2;
-  }
+.icon {
+  display: inline;
+  font-weight: 400;
+}
 
-  .buttons {
-    /* width: 300px; */
-    flex: 1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+.search-bar {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
 
-  button {
-    background-color: var(--dashboard-bg-clr);
-    color: var(--dashboard-text-clr);
-    font-weight: bold;
-    padding: 1em 2em;
-    border: none;
-    border-radius: 2em;
-  }
+.search-bar input {
+  flex: 1;
+  border: none;
+  border-radius: 1rem;
+  background-color: var(--primary-bg-clr);
+  padding: 1rem;
+  height: 2rem;
+  width: 600px;
+}
+
+.top-row .user {
+  margin: 0;
+}
+
+header .user {
+  font-weight: bold;
+}
+
+.top-row div:nth-child(2) {
+  display: flex;
+  gap: 1rem;
+}
+
+.bottom-row .user {
+  flex: 2;
+  font-size: 1.5rem;
+}
+
+.bottom-row .user img {
+  width: 80px;
+  height: 80px;
+}
+
+header .buttons {
+  /* width: 300px; */
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  background-color: var(--dashboard-bg-clr);
+  color: var(--dashboard-text-clr);
+  font-weight: bold;
+  padding: 1em 2em;
+  border: none;
+  border-radius: 2em;
 }
 
 main {
@@ -97,9 +139,10 @@ main {
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
 
-  .card {
-    border-left: 7px solid var(--accent-clr);
-  }
+}
+
+.project-cards .card {
+  border-left: 7px solid var(--accent-clr);
 }
 
 .card {
@@ -107,11 +150,11 @@ main {
   border-radius: 8px;
   padding: 1.5em;
   box-shadow: var(--box-shadow);
+}
 
-  p {
-    line-height: 1.5;
-    color: var(--secondary-text-clr);
-  }
+.card p {
+  line-height: 1.5;
+  color: var(--secondary-text-clr);
 }
 
 .aside-column {
@@ -122,17 +165,19 @@ main {
   display: flex;
   align-items: center;
   gap: 1rem;
+}
 
-  img {
-    background-color: orange;
-    border-radius: 50%;
-  }
+.user img {
+  width: 50px;
+  height: 50px;
+  background-color: orange;
+  border-radius: 50%;
+}
 
-  +.user {
-    margin-top: 1.5rem;
-  }
+.user+.user {
+  margin-top: 1.5rem;
+}
 
-  p {
-    margin: 0;
-  }
+.user p {
+  margin: 0;
 }
