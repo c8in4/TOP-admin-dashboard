@@ -30,12 +30,26 @@ body {
   background-color: var(--dashboard-bg-clr);
   color: white;
   grid-area: sidebar;
-
 }
 
 .sidebar ul {
   list-style: none;
   line-height: 1.5;
+
+  padding: 1rem;
+}
+
+.sidebar li {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.sidebar ul a {
+  color: var(--dashboard-text-clr);
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 header {
@@ -150,6 +164,13 @@ main {
   border-radius: 8px;
   padding: 1.5em;
   box-shadow: var(--box-shadow);
+}
+
+.card-icons {
+
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
 }
 
 .card p {
