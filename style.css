@@ -72,6 +72,10 @@ header .bottom-row {
   padding: 0 1rem;
 }
 
+.top-row>div:last-child {
+  margin: 0;
+}
+
 .icon {
   display: inline;
   font-weight: 400;
@@ -91,6 +95,7 @@ header .bottom-row {
   background-color: var(--primary-bg-clr);
   padding: 1rem;
   height: 2rem;
+  max-width: 72ch;
 }
 
 header .user {
