@@ -16,9 +16,10 @@
 
 body {
   margin: 0;
-  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: minmax(min-content, 1fr) 4fr;
   grid-template-rows: auto 1fr;
   grid-template-areas:
     "sidebar header"
@@ -67,7 +68,6 @@ header .top-row,
 header .bottom-row {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
   align-items: center;
   padding: 0 1rem;
 }
@@ -78,6 +78,7 @@ header .bottom-row {
 }
 
 .search-bar {
+  flex: 1;
   display: flex;
   gap: 1rem;
   align-items: center;
@@ -90,18 +91,13 @@ header .bottom-row {
   background-color: var(--primary-bg-clr);
   padding: 1rem;
   height: 2rem;
-  width: 600px;
-}
-
-.top-row .user {
-  margin: 0;
 }
 
 header .user {
   font-weight: bold;
 }
 
-.top-row div:nth-child(2) {
+.top-row div:last-child {
   display: flex;
   gap: 1rem;
 }
@@ -113,11 +109,9 @@ header .user {
 
 .bottom-row .user img {
   width: 80px;
-  height: 80px;
 }
 
 header .buttons {
-  /* width: 300px; */
   flex: 1;
   display: flex;
   justify-content: space-between;
@@ -135,24 +129,27 @@ button {
 
 main {
   background-color: var(--primary-bg-clr);
-  padding: 1rem 2rem 2rem 1rem;
+  padding: 1rem;
   grid-area: main;
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-template-areas:
     "your-projects  aside-column";
   gap: 1rem;
+  overflow-y: scroll;
+
 }
 
 .your-projects {
   grid-area: your-projects;
+  width: 100%;
+  overflow-y: scroll;
 }
 
 .project-cards {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(28ch, 1fr));
   gap: 1.5rem;
-
 }
 
 .project-cards .card {
@@ -180,6 +177,11 @@ main {
 
 .aside-column {
   grid-area: aside-column;
+  overflow-y: scroll;
+}
+
+.announcments {
+  min-width: min-content;
 }
 
 .user {
@@ -190,7 +192,6 @@ main {
 
 .user img {
   width: 50px;
-  height: 50px;
   background-color: orange;
   border-radius: 50%;
 }
@@ -201,4 +202,8 @@ main {
 
 .user p {
   margin: 0;
+}
+
+img {
+  aspect-ratio: 1;
 }
